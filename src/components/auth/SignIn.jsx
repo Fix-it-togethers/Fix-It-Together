@@ -1,4 +1,4 @@
-import { ErrorMessage, Form, Formik } from 'formik'
+import { ErrorMessage, Form, Formik , Field } from 'formik'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 import * as Yup from "yup";
@@ -29,11 +29,11 @@ const SignIn = () => {
                     </div>
                     <Formik initialValues={initialValues}
                         validationSchema={ValiationShema}>
-                        <Form className='lg:h-screen text-[#474E68] flex flex-col lg:justify-center lg:items-center lg:space-x-5  space-y-5'>
+                        <Form className='lg:h-screen text-[#474E68] flex flex-col lg:justify-center lg:items-start lg:space-x-5  space-y-5'>
                             <p className='lg:w-[80%] text-4xl lg:ml-5 text-start'>Login</p>
-                            <input className='p-3 border-2 lg:w-[80%] outline-none rounded-md ' type="email" placeholder='Enter Email ' name='email' />
+                            <Field className='p-3 border-2 lg:w-[80%] outline-none rounded-md ' type="email" placeholder='Enter Email ' name='email' />
                             <ErrorMessage component="div" name='email' className='text-red-500'></ErrorMessage>
-                            <input className='p-3 border-2 lg:w-[80%] outline-none rounded-md ' type="password" placeholder='Enter Password ' name='password' />
+                            <Field className='p-3 border-2 lg:w-[80%] outline-none rounded-md ' type="password" placeholder='Enter Password ' name='password' />
                             <ErrorMessage component="div" name='password' className='text-red-500'></ErrorMessage>
                             <button className='p-3 border-2 lg:w-[80%] bg-[#474E68] text-white outline-none rounded-md'><Link to='/Home'>Login</Link></button>
                         </Form>

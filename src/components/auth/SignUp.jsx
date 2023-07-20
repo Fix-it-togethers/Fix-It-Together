@@ -1,19 +1,19 @@
-import { ErrorMessage, Form, Formik } from 'formik'
+import { ErrorMessage, Form, Formik , Field} from 'formik'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 import * as Yup from "yup";
 const SignUp = () => {
     const initialValues = {
-        first_name	: '',
-        last_name : '',
-        email: '',
-        password: ''
+        first_name:'',
+        last_name:'',
+        email:'',
+        password:''
     }
     const ValiationShema = Yup.object({
-        first_name	: Yup.string().required("Please enter your first name"),
-        last_name: Yup.string().required("Please enter your email last name"),
-        email: Yup.string().required("Please enter your email"),
-        password: Yup.string().required("Please enter your password")
+        first_name:Yup.string().required("Please enter your first name"),
+        last_name:Yup.string().required("Please enter your last name"),
+        email:Yup.string().required("Please enter your email"),
+        password:Yup.string().required("Please enter your password")
     })
     return (
         <div className="bg-white">
@@ -33,15 +33,15 @@ const SignUp = () => {
                     </div>
                     <Formik initialValues={initialValues}
                         validationSchema={ValiationShema}>
-                        <Form className='lg:h-screen text-[#474E68] flex flex-col lg:justify-center lg:items-center lg:space-x-5  space-y-5'>
+                        <Form className='lg:h-screen text-[#474E68] flex flex-col lg:justify-center lg:items-start lg:space-x-5  space-y-5'>
                             <p className='lg:w-[80%] text-4xl lg:ml-5 text-start'>Sign Up </p>
-                            <input className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter First name ' name='first_name	' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter First name ' name='first_name' />
                             <ErrorMessage component="div" name='first_name' className='text-red-500'></ErrorMessage>
-                            <input className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter Email ' name='last_name' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter First name ' name='last_name' />
                             <ErrorMessage component="div" name='last_name' className='text-red-500'></ErrorMessage>
-                            <input className='p-3 border-2 lg:w-[80%]' type="email" placeholder='Enter Email ' name='email' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="email" placeholder='Enter Email ' name='email' />
                             <ErrorMessage component="div" name='email' className='text-red-500'></ErrorMessage>
-                            <input className='p-3 border-2 lg:w-[80%]' type="password" placeholder='Enter Password ' name='password' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="password" placeholder='Enter Password ' name='password' />
                             <ErrorMessage component="div" name='password' className='text-red-500'></ErrorMessage>
                             <button className='p-3 border-2 lg:w-[80%] bg-[#474E68] text-white'>Login</button>
                         </Form>
