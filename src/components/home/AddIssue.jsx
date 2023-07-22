@@ -1,7 +1,9 @@
-import { ErrorMessage, Form, Formik } from 'formik'
+import { ErrorMessage, Form, Formik, Field } from 'formik'
 import * as Yup from "yup";
 import PhotoThink from '../../assets/think.png'
 import { Link } from 'react-router-dom';
+import { useAddIssueMutation } from '../../store/Api/FixSlice';
+
 const AddIssue = () => {
     const initialValues = {
         title: '',
@@ -13,9 +15,29 @@ const AddIssue = () => {
     const ValiationShema = Yup.object({
         title: Yup.string().required("Please enter your first title"),
         description: Yup.string().required("Please enter your description"),
-        date: Yup.string().required("Please enter your image url"),
-        image: Yup.string().required("Please enter your location")
+        date: Yup.string().required("Please enter the date"),
+        image: Yup.string().required("Please enter your Image"),
+        location: Yup.string().required("Please enter your location")
     })
+
+        const [AddIssue] = useAddIssueMutation();
+        const handleSubmit = (values, {resetForm}) => {
+          AddIssue({
+            title : values.title,
+            description: values.description,
+            date: values.date,
+            image: values.image,
+            location: values.location
+        })
+        .then(() => {
+            console.log(values);
+        })
+        .catch((error) => {
+            console.log(error);
+        }) 
+        resetForm();
+        };
+    
     return (
         <div className=" w-[90%] mx-auto bg-white shadow rounded p-3 lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#474E68]">
             <div className='flex flex-col justify-start items-start gap-3 space-y-3'>
@@ -34,20 +56,21 @@ const AddIssue = () => {
                     <div>
                         <img className='mt-[-30px]' src={PhotoThink} alt="creative thinking" />
                     </div>
-                    <Formik initialValues={initialValues}
-                        validationSchema={ValiationShema}>
+                    <Formik initialValues={initialValues }
+                        validationSchema={ValiationShema}
+                        onSubmit={handleSubmit}>
                         <Form className='text-[#03256C] flex flex-col lg:justify-start lg:items-start space-y-5'>
-                            <input className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter title ' name='title' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter title ' name='title' />
                             <ErrorMessage component="div" name='title' className='text-red-500'></ErrorMessage>
-                            <input className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter description ' name='description' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter description ' name='description' />
                             <ErrorMessage component="div" name='description' className='text-red-500'></ErrorMessage>
-                            <input className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter date' name='date' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter date' name='date' />
                             <ErrorMessage component="div" name='date' className='text-red-500'></ErrorMessage>
-                            <input className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter image Url ' name='image' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter image Url ' name='image' />
                             <ErrorMessage component="div" name='image' className='text-red-500'></ErrorMessage>
-                            <input className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter location ' name='location' />
+                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter location' name='location' />
                             <ErrorMessage component="div" name='location' className='text-red-500'></ErrorMessage>
-                            <button className='p-3 border-2 lg:w-[80%] bg-[#03256C] text-white'>Login</button>
+                            <button type="submit" className='p-3 border-2 lg:w-[80%] bg-[#03256C] text-white'>Add Issue</button>
                         </Form>
                     </Formik>
                 </div>
