@@ -1,16 +1,11 @@
-<<<<<<< HEAD
 import { ErrorMessage, Form, Formik , Field} from 'formik'
-=======
-import React from 'react';
-import { ErrorMessage, Form, Formik,Field } from 'formik'
->>>>>>> 1bbbe2481b7f3235362e108908325ff2e774c8fb
 import { AiOutlineCheck } from 'react-icons/ai'
 import { Link,useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
 import { useSignUpMutation } from '../../store/Api/AuthSlice';
-import  Swal  from 'sweetalert2'
+import { toast } from 'react-toastify';
 const SignUp = () => {
-    const [signUp,{errors={}}]=useSignUpMutation();
+    const [signUp ]= useSignUpMutation();
     const navigate = useNavigate();
   
     const initialValues = {
@@ -33,22 +28,24 @@ const SignUp = () => {
             email:values.email,
             password:values.password,
         }).unwrap().then(()=>{
+            toast.success("Successfully");
             navigate("../SignIn");
         }).catch((error) => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Sorry...',
-                text: error.data.error,
-              })
+            // Swal.fire({
+            //     icon: 'error',
+            //     title: 'Sorry...',
+            //     text: error.data.error,n
+            //   })
+            toast.error("user all ready exists ", error)
          
           });
     }
  
   
     return (
-        <div className="bg-white">
+        <div className=" w-[95%] mx-auto lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#474E68] bg-white p-3 rounded shadow-sm">
             <div className='bg-white mt-10 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 p-4 space-y-5 lg:space-y-2'>
-                <div className=' lg:h-screen bg-[#474E68] text-white rounded flex flex-col lg:justify-center lg:items-center space-y-3 p-8 lg:p-3'>
+                <div className='h-[28rem] bg-[#03256C] text-white rounded flex flex-col justify-center items-center space-y-3 p-8 lg:p-3'>
                     <h1 className='text-3xl font-bold lg:text-4xl lg:tracking-wider'>Better Community</h1>
                     <div className=' space-y-3'>
                         <p className='text-base flex flex-row justify-start items-baseline space-y-2 space-x-3'><AiOutlineCheck size={18} /> <span>Help your community</span></p>
@@ -62,26 +59,10 @@ const SignUp = () => {
                         <button><Link to='/SignIn'>Sign In </Link></button>
                     </div>
                     <Formik initialValues={initialValues}
-<<<<<<< HEAD
-                        validationSchema={ValiationShema}>
-                        <Form className='lg:h-screen text-[#474E68] flex flex-col lg:justify-center lg:items-start lg:space-x-5  space-y-5'>
-                            <p className='lg:w-[80%] text-4xl lg:ml-5 text-start'>Sign Up </p>
-                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter First name ' name='first_name' />
-                            <ErrorMessage component="div" name='first_name' className='text-red-500'></ErrorMessage>
-                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter First name ' name='last_name' />
-                            <ErrorMessage component="div" name='last_name' className='text-red-500'></ErrorMessage>
-                            <Field className='p-3 border-2 lg:w-[80%]' type="email" placeholder='Enter Email ' name='email' />
-                            <ErrorMessage component="div" name='email' className='text-red-500'></ErrorMessage>
-                            <Field className='p-3 border-2 lg:w-[80%]' type="password" placeholder='Enter Password ' name='password' />
-                            <ErrorMessage component="div" name='password' className='text-red-500'></ErrorMessage>
-                            <button className='p-3 border-2 lg:w-[80%] bg-[#474E68] text-white'>Login</button>
-=======
                         validationSchema={ValiationShema}
                         onSubmit={handleSubmit}>
-                        <Form className='lg:h-screen text-[#474E68] flex flex-col lg:justify-center lg:items-center lg:space-x-5  space-y-5'>
+                        <Form className='text-[#03256C] flex flex-col lg:justify-center lg:items-center lg:space-x-5  space-y-5'>
                             <p className='lg:w-[80%] text-4xl lg:ml-5 text-start'>Sign Up </p>
-                                                        <ErrorMessage component="div" name='first_name' className='text-red-500'/>
-
                             <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter First name ' name='first_name' />
                             <ErrorMessage component="div" name='first_name' className='text-red-500'/>
                             <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter last_name ' name='last_name' />
@@ -90,8 +71,8 @@ const SignUp = () => {
                             <ErrorMessage component="div" name='email' className='text-red-500'/>
                             <Field className='p-3 border-2 lg:w-[80%]' type="password" placeholder='Enter Password ' name='password' />
                             <ErrorMessage component="div" name='password' className='text-red-500'/>
-                            <button type="submit" className='p-3 border-2 lg:w-[80%] bg-[#474E68] text-white'>Login</button>
->>>>>>> 1bbbe2481b7f3235362e108908325ff2e774c8fb
+                            <button type="submit" className='p-3 border-2 lg:w-[80%] bg-[#03256C] text-white'>Login</button>
+
                         </Form>
                     </Formik>
                 </div>

@@ -1,35 +1,17 @@
-import Sidebar from "./Sidebar"
-import { LuSearch, LuBell } from 'react-icons/lu'
-import Miirshe from '../../assets/miirshe.jpg'
-import { Outlet } from "react-router-dom"
-import { useState } from "react"
-import { HiMenuAlt2 } from "react-icons/hi"
+import Dashboard from "./Dashboard"
+import profile from '../../assets/issues.png'
 const Home = () => {
-    const [showMenu, setShowMenu] = useState(false);
-    const HandleShowMenu = () => {
-        setShowMenu(!showMenu);
-    }
-    const HandleHideMenu = () => {
-        setShowMenu(false);
-    }
     return (
-        <div>
-            <Sidebar HandleShowMenu={HandleShowMenu} HandleHideMenu={HandleHideMenu}  showMenu={showMenu}/>
-            <div className="w-full p-4 shadow-md border-b-2 bg-white lg:w-[80%] lg:ml-[20%] flex flex-row justify-start  lg:justify-between  items-start lg:items-center">
-                <div className="flex flex-row justify-start items-start lg:items-center ml-4">
-                    <p className='lg:hidden'><HiMenuAlt2 size={28} onClick={HandleShowMenu} /></p>
-                    <LuSearch size={25} className="text-[#474E68] mt-2" />
-                    <input className="p-2 rounded outline-none" type="text" placeholder="Search..." />
+        <div className=" w-[95%] mx-auto lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#474E68] bg-white p-3 rounded shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 bg-[#03256C] text-white p-5 rounded-md">
+                <div className="flex flex-col justify-center items-start space-y-3">
+                    <h1 className="text-xl  ml-4 lg:ml-0 lg:text-3xl lg:tracking-widest">Welcome to Fix It Together </h1>
+                    <p className="text-base ml-4 lg:ml-0 lg:text-lg lg:tracking-wider">Let`s make our community better a place , Ever get frustrated that a problem in your town or neighborhood goes ages without being resolved? You might have road issues (potholes, dangerous areas), overgrown plants</p>
+                    <button className="px-3 py-2 text-[#474E68] mt-5 rounded shadow bg-white">Get Started</button>
                 </div>
-                <div className="flex flex-row justify-start items-center gap-4 lg:mr-20">
-                    <LuBell size={25} />
-                    <div className="border-l-2 flex flex-row justify-start items-center gap-4">
-                        <img className="ml-5  w-10 h-8 lg:h-10 rounded-[50%]" src={Miirshe} alt="photo profile" />
-                        <p className="hidden lg:visible">Miirshe</p>
-                    </div>
-                </div>
+                <img src={profile} alt="profile issues" />
             </div>
-            <Outlet />
+            <Dashboard />
         </div>
     )
 }
