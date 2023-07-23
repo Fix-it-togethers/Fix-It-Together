@@ -11,7 +11,7 @@ export const FixSlice = createApi({
         baseUrl: BASE_URL,
         prepareHeaders: (Headers) => {
             const result = getToken();
-            if(result){
+            if (result) {
                 Headers.set("Authorization", `Bearer ${result}`);
             }
             return Headers;
@@ -19,6 +19,15 @@ export const FixSlice = createApi({
     }),
     tagTypes: ["issues"],
     endpoints: (builder) => ({
+        FetchIssue: builder.query({
+            query: () => {
+                return {
+                    url: '/issues',
+                    method: 'GET'
+                }
+            },
+            providesTags: ["issues"]
+        }),
         // Add Issue
         AddIssue: builder.mutation({
             query: (newIssue) => ({
@@ -31,4 +40,4 @@ export const FixSlice = createApi({
     })
 })
 
-export const { useAddIssueMutation } = FixSlice;
+export const { useFetchIssueQuery, useAddIssueMutation } = FixSlice;
