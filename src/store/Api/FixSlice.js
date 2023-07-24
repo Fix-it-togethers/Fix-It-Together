@@ -37,7 +37,16 @@ export const FixSlice = createApi({
             }),
             invalidatesTags: ["issues"]
         }),
+        // Update Issue
+        updateIssue: builder.mutation({
+            query: ( id, updatedIssue ) => ({
+                url: `/issues/issue_id/${id}`,
+                method: 'PUT',
+                body: updatedIssue,
+            }),
+            invalidatesTags: ['issues'],
+        }),
     })
 })
 
-export const { useFetchIssueQuery, useAddIssueMutation } = FixSlice;
+export const { useFetchIssueQuery, useAddIssueMutation, useUpdateIssueMutation } = FixSlice;
