@@ -7,7 +7,7 @@ import { RiChatDeleteFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 function Dashboard() {
     const { data: fetchIssue = [] } = useFetchIssueQuery()
-    console.log(fetchIssue);
+    console.log("miirshe dhib badnidaa",fetchIssue);
     return (
         <div className="w-full lg:ml-4 mt-10 lg:mt-14 text-[#03256C]">
             <div className='mt-5'>
@@ -18,9 +18,9 @@ function Dashboard() {
                             return (
                                 <Link to={`/Detail/${issue.id}`} key={issue.id}>
                                     <div className="w-[100%] mx-auto lg:mx-0 flex flex-col justify-start items-start lg:items-start transition hover:shadow-md cursor-pointer ease-in-out p-3 shadow rounded border-collapse" key={issue.id}>
-                                        <img className='lg:w-80  lg:h-72' src={issue.image} alt="photo fix issue" />
+                                        <img className='w-full lg:w-80  lg:h-72' src={issue.image} alt="photo fix issue" />
                                         <div className=' space-y-2 mt-3 w-full'>
-                                            <h1 className='text-xl'>{issue.title}</h1>
+                                            <h1 className='text-xl font-bold'>{issue.title}</h1>
                                             <p className='text-base w-11/12'>{issue.description} </p>
                                             <div className='flex flex-col justify-start items-start space-y-1 gap-3'>
                                                 <p className='flex flex-row justify-start lg:items-center items-start'><CiFlag1 className='mt-2' size={20} /> <span className='ml-2'>{issue.location}</span></p>

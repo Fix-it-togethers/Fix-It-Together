@@ -13,6 +13,7 @@ import TopBar from './components/home/TopBar'
 import About from './components/about/About'
 import PrivateRoutes from './PrivateRoutes'
 import Detail from './components/detail/Detail'
+import AllIssues from './components/post issues/AllIssues'
 function App() {
   const locations = useLocation();
   const [showMenu, setShowMenu] = useState(false);
@@ -33,14 +34,15 @@ function App() {
             <Route path='/SignUp/:id' element={<SignUp />} />
         }
         <Route path='/' element={<Home />} />
-        <Route path='/AddIssue' element={<PrivateRoutes/>}>
+        <Route path='/AddIssue' element={<PrivateRoutes />}>
           <Route path='/AddIssue' element={<AddIssue />} />
         </Route>
-        <Route path='/Contact' element={<PrivateRoutes/>}>
+        <Route path='/Contact' element={<PrivateRoutes />}>
           <Route path='/Contact' element={<Contact />} />
         </Route>
-        <Route path='/Detail' element={<PrivateRoutes/>}>
-          <Route path='/Detail/:id' element={<Detail/>} />
+        <Route path='/AllIssues' element={<AllIssues />} />
+        <Route path='/Detail' element={<PrivateRoutes />}>
+          <Route path='/Detail/:id' element={<Detail />} />
         </Route>
         <Route path='/About' element={<About />} />
       </Routes>

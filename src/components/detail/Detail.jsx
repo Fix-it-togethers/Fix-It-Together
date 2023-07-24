@@ -16,6 +16,7 @@ function Detail() {
         description: '',
         image:'',
         location:'',
+        date:'',
         downvotes: '',
         upvotes: ''
     });
@@ -31,6 +32,7 @@ function Detail() {
                 description: result.description,
                 image: result.image,
                 location: result.location,
+                date:result.date,
                 downvotes: result.downvotes,
                 upvotes: result.upvotes
             });
@@ -42,7 +44,7 @@ function Detail() {
                 <Link to='/'>Back</Link>
             </button>
             <div className="w-[100%] mt-4 mx-auto lg:mx-0 flex flex-col lg:flex-row  justify-start items-start lg:items-start transition hover:shadow-md cursor-pointer ease-in-out p-3 shadow rounded border-collapse lg:gap-4" key={issue.id}>
-                <img className='lg:w-80  lg:h-72' src={issue.image} alt="photo fix issue" />
+                <img className='w-full lg:w-80  lg:h-72' src={issue.image} alt="photo fix issue" />
                 <div className=' space-y-2 mt-3 w-full'>
                     <h1 className='text-xl'>{issue.title}</h1>
                     <p className='text-base w-11/12'>{issue.description} </p>
