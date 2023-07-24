@@ -1,5 +1,5 @@
-import { Link, useParams } from "react-router-dom"
-import { useFetchIssueQuery } from "../../store/Api/FixSlice"
+import { Link, useParams,  } from "react-router-dom"
+import { useFetchIssueQuery,  } from "../../store/Api/FixSlice"
 import { useEffect, useState } from "react";
 import { BiMessageEdit } from "react-icons/bi";
 import { RiChatDeleteFill } from "react-icons/ri";
@@ -9,12 +9,14 @@ import { CgCalendarDates } from "react-icons/cg";
 function Detail() {
     const params = useParams();
     const { data: issues = [] } = useFetchIssueQuery();
-    console.log(issues)
+    //console.log(issues)
+    
     const [issue , setIssue] = useState({
         id:'',
         title:'',
         description: '',
         image:'',
+        date: '',
         location:'',
         downvotes: '',
         upvotes: ''
@@ -36,6 +38,9 @@ function Detail() {
             });
         }
     }, [issues ,params.id]);
+
+
+
     return (
         <div className=" w-[95%] mx-auto lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#474E68] bg-white p-3 rounded shadow-sm">
             <button className="px-7 py-2 shadow-md rounded bg-[#CACCD6] text-[#03256C]">
@@ -56,7 +61,8 @@ function Detail() {
                             <AiOutlineDislike size={25} />
                         </span>
                         <span className='flex flex-row justify-start items-center space-x-2'>
-                            <BiMessageEdit size={25} />
+                            
+                            <Link to={`/UpdateIssue/${issue.id}`} ><BiMessageEdit size={25} className="inline"  /></Link>
                             <RiChatDeleteFill size={25} />
                         </span>
                     </div>

@@ -13,6 +13,7 @@ import TopBar from './components/home/TopBar'
 import About from './components/about/About'
 import PrivateRoutes from './PrivateRoutes'
 import Detail from './components/detail/Detail'
+import UpdateIssue from './components/UpdateIssue/UpdateIssue'
 function App() {
   const locations = useLocation();
   const [showMenu, setShowMenu] = useState(false);
@@ -41,6 +42,9 @@ function App() {
         </Route>
         <Route path='/Detail' element={<PrivateRoutes/>}>
           <Route path='/Detail/:id' element={<Detail/>} />
+        </Route>
+        <Route path='/UpdateIssue' element={<PrivateRoutes/>}>
+          <Route path='/UpdateIssue/:id' element={<UpdateIssue />} />
         </Route>
         <Route path='/About' element={<About />} />
       </Routes>
