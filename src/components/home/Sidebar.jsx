@@ -23,8 +23,8 @@ const Sidebar = ({ HandleHideMenu, showMenu }) => {
         navigate('/SignIn')
     }
     return (
-        <div className={showMenu ? 'show w-full lg:w-[18%] fixed left-0 top-0 bottom-0 bg-[#ffffff] shadow' : 'hide w-full lg:w-[18%] fixed left-0 top-0 bottom-0  bg-[#F4F4F4] shadow'}>
-            <div className='flex flex-col justify-start items-start ml-10 text-[#03256C] space-y-5 relative'>
+        <div className={showMenu ? 'show w-full lg:w-[18%] fixed left-0 top-0 bottom-0 bg-[#061826] shadow' : 'hide w-full lg:w-[18%] fixed left-0 top-0 bottom-0  bg-[#061826] shadow'}>
+            <div className='flex flex-col justify-start items-start ml-10 text-[#fff] space-y-5 relative'>
                 <LuLocateFixed size={100} />
                 <nav>
                     <ul className='show flex flex-col justify-start items-start space-y-4' onClick={HandleHideMenu}>

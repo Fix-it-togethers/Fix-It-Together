@@ -39,14 +39,21 @@ export const FixSlice = createApi({
         }),
         // Update Issue
         updateIssue: builder.mutation({
-            query: ( id, updatedIssue ) => ({
-                url: `/issues/issue_id/${id}`,
+            query: ({ id, updatedIssue }) => ({
+                url: `/issues/${id}`,
                 method: 'PUT',
                 body: updatedIssue,
             }),
             invalidatesTags: ['issues'],
         }),
+        deleteIssue: builder.mutation({
+            query: (id) => ({
+                url: `/issues/${id}`,
+                method: 'DELETE',
+            }),
+            invalidatesTags: ["issues"]
+        })
     })
 })
 
-export const { useFetchIssueQuery, useAddIssueMutation, useUpdateIssueMutation } = FixSlice;
+export const { useFetchIssueQuery, useAddIssueMutation, useUpdateIssueMutation, useDeleteIssueMutation } = FixSlice;

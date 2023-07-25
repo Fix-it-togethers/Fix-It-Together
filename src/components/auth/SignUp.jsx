@@ -43,9 +43,9 @@ const SignUp = () => {
  
   
     return (
-        <div className=" w-[95%] mx-auto lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#474E68] bg-white p-3 rounded shadow-sm">
+        <div className=" w-[95%] mx-auto lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#061826] bg-[#fff] p-3 rounded shadow-sm">
             <div className='bg-white mt-10 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 p-4 space-y-5 lg:space-y-2'>
-                <div className='h-[28rem] bg-[#03256C] text-white rounded flex flex-col justify-center items-center space-y-3 p-8 lg:p-3'>
+                <div className='h-[28rem] bg-[#061826] text-[#fff] rounded flex flex-col justify-center items-center space-y-3 p-8 lg:p-3'>
                     <h1 className='text-3xl font-bold lg:text-4xl lg:tracking-wider'>Better Community</h1>
                     <div className=' space-y-3'>
                         <p className='text-base flex flex-row justify-start items-baseline space-y-2 space-x-3'><AiOutlineCheck size={18} /> <span>Help your community</span></p>
@@ -61,7 +61,7 @@ const SignUp = () => {
                     <Formik initialValues={initialValues}
                         validationSchema={ValiationShema}
                         onSubmit={handleSubmit}>
-                        <Form className='text-[#03256C] flex flex-col lg:justify-center lg:items-center lg:space-x-5  space-y-5'>
+                        <Form className='text-[#061826] flex flex-col lg:justify-center lg:items-center lg:space-x-5  space-y-5'>
                             <p className='lg:w-[80%] text-4xl lg:ml-5 text-start'>Sign Up </p>
                             <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter First name ' name='first_name' />
                             <ErrorMessage component="div" name='first_name' className='text-red-500'/>
@@ -71,7 +71,7 @@ const SignUp = () => {
                             <ErrorMessage component="div" name='email' className='text-red-500'/>
                             <Field className='p-3 border-2 lg:w-[80%]' type="password" placeholder='Enter Password ' name='password' />
                             <ErrorMessage component="div" name='password' className='text-red-500'/>
-                            <button type="submit" className='p-3 border-2 lg:w-[80%] bg-[#03256C] text-white'>Login</button>
+                            <button type="submit" className='p-3 border-2 lg:w-[80%] bg-[#061826] text-[#fff]'>Signup</button>
 
                         </Form>
                     </Formik>

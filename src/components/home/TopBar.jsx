@@ -6,7 +6,7 @@ const TopBar = ({HandleShowMenu}) => {
     const {data:user=[]} = useGetUsersQuery();
     console.log("hi miirshe data",user.first_name)
     return (
-        <div className="w-full p-4 shadow border-b-1 bg-white lg:w-[85%] lg:ml-[15%] flex flex-row justify-between items-center">
+        <div className="w-full p-4 shadow border-b-1 bg-white lg:w-[82%] lg:ml-[18%] flex flex-row justify-between items-center">
             <div className="flex flex-row justify-between items-center  ml-4">
                 <p className='lg:hidden'><HiMenuAlt2 className='mt-2' size={28} onClick={HandleShowMenu} /></p>
                 {/* <LuSearch size={25} className="text-[#474E68] mt-2" />
