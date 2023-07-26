@@ -69,7 +69,6 @@ function Detail() {
                             <AiOutlineDislike size={25} />
                         </span>
                         <span className='flex flex-row justify-start items-center space-x-2'>
-                            
                             <Link to={`/UpdateIssue/${issue.id}`} ><BiSolidEdit size={25} className="inline"  /></Link>
                             <RiChatDeleteFill size={25} onClick={()=>handleDelete(issue.id)}/>
                         </span>

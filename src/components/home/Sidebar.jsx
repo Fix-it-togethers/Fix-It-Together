@@ -1,13 +1,13 @@
-import { LuLocateFixed } from 'react-icons/lu'
+import { LuInfo, LuLocateFixed } from 'react-icons/lu'
 import { RxDashboard } from 'react-icons/rx'
 import { BiSolidAddToQueue } from 'react-icons/bi'
 import { VscIssues } from 'react-icons/vsc'
 import { Link, useNavigate } from 'react-router-dom'
 import { IoMdContacts, IoMdLogIn } from 'react-icons/io'
-import { FcAbout } from 'react-icons/fc'
 import './style.css'
 import { useEffect, useState } from 'react'
 import Cookies from 'js-cookie'
+import { CgProfile } from 'react-icons/cg'
 const Sidebar = ({ HandleHideMenu, showMenu }) => {
     const navigate = useNavigate();
     const token = Cookies.get('token');
@@ -39,10 +39,13 @@ const Sidebar = ({ HandleHideMenu, showMenu }) => {
                                 </>
                             )
                         }
-                        <li className='flex flex-row justify-start items-center gap-3'><FcAbout className='mt-3' size={20} /><Link className='text-base tracking-widest mt-3' to='/About'>About</Link></li>
+                        <li className='flex flex-row justify-start items-center gap-3'><LuInfo className='mt-3' size={20} /><Link className='text-base tracking-widest mt-3' to='/About'>About</Link></li>
                         {
                             auth && (
-                                <li className='flex flex-row justify-start items-center gap-3'><IoMdLogIn className='mt-3' size={20} /><button className='text-base tracking-widest mt-3' onClick={handleLogOut}>Signout </button></li>
+                                <>
+                                    <li className='flex flex-row justify-start items-center gap-3'><CgProfile className='mt-3' size={20} /><Link className='text-base tracking-widest mt-3' to='/Profile'>Profile</Link></li>
+                                    <li className='flex flex-row justify-start items-center gap-3'><IoMdLogIn className='mt-3' size={20} /><button className='text-base tracking-widest mt-3' onClick={handleLogOut}>Signout </button></li>
+                                </>
                             )
                         }
                         {

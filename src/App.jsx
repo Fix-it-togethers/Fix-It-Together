@@ -15,6 +15,7 @@ import PrivateRoutes from './PrivateRoutes'
 import Detail from './components/detail/Detail'
 import AllIssues from './components/post issues/AllIssues'
 import UpdateIssue from './components/UpdateIssue/UpdateIssue'
+import Profile from './components/profile/Profile'
 function App() {
   const locations = useLocation();
   const [showMenu, setShowMenu] = useState(false);
@@ -26,7 +27,7 @@ function App() {
   }
   return (
     <>
-      <ToastContainer position="top-center"/>
+      <ToastContainer position="top-center" />
       <Sidebar HandleShowMenu={HandleShowMenu} HandleHideMenu={HandleHideMenu} showMenu={showMenu} />
       <TopBar HandleShowMenu={HandleShowMenu} />
       <Routes>
@@ -43,10 +44,14 @@ function App() {
         </Route>
         <Route path='/AllIssues' element={<AllIssues />} />
         <Route path='/Detail/:id' element={<Detail />} />
-        <Route path='/UpdateIssue' element={<PrivateRoutes/>}>
+        <Route path='/UpdateIssue' element={<PrivateRoutes />}>
           <Route path='/UpdateIssue/:id' element={<UpdateIssue />} />
         </Route>
         <Route path='/About' element={<About />} />
+        <Route path='/Profile' element={<PrivateRoutes />}>
+          <Route path='/Profile' element={<Profile />} />
+        </Route>
+
       </Routes>
     </>
   )
