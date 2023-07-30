@@ -33,7 +33,7 @@ const Sidebar = ({ HandleHideMenu, showMenu }) => {
                             auth && (
                                 <>
                                     <li className='flex flex-row justify-start items-center gap-3'><BiSolidAddToQueue className='mt-3' size={20} /><Link className='text-base tracking-widest mt-3' to='/AddIssue'>Add Issue</Link></li>
-                                    <li className='flex flex-row justify-start items-center gap-3'><VscIssues className='mt-3' size={20} /><Link className='text-base tracking-widest mt-3'>My Issue</Link></li>
+                                    <li className='flex flex-row justify-start items-center gap-3'><VscIssues className='mt-3' size={20} /><Link className='text-base tracking-widest mt-3' to='/MyIssues'>My Issue</Link></li>
                                     <li className='flex flex-row justify-start items-center gap-3'><VscIssues className='mt-3' size={20} /><Link className='text-base tracking-widest mt-3' to='/AllIssues'>All Issues</Link></li>
                                     <li className='flex flex-row justify-start items-center gap-3'><IoMdContacts className='mt-3' size={20} /><Link className='text-base tracking-widest mt-3' to='/Contact'>Contact</Link></li>
                                 </>

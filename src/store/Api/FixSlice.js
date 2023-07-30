@@ -52,8 +52,22 @@ export const FixSlice = createApi({
                 method: 'DELETE',
             }),
             invalidatesTags: ["issues"]
+        }),
+        upvotes: builder.mutation({
+            query: (data) => ({
+                url: `'/api/issues/${data.id}/upvote`,
+                method: 'POST'
+            }),
+            invalidatesTags: ["issues"]
+        }),
+        downVotes: builder.mutation({
+            query: (data) => ({
+                url: `/api/issues/${data.id}/downvote`,
+                method: 'POST'
+            }),
+            invalidatesTags: ["issues"]
         })
     })
 })
 
-export const { useFetchIssueQuery, useAddIssueMutation, useUpdateIssueMutation, useDeleteIssueMutation } = FixSlice;
+export const { useFetchIssueQuery, useAddIssueMutation, useUpdateIssueMutation, useDeleteIssueMutation, useDownVotesMutation, useUpvotesMutation } = FixSlice;

@@ -16,6 +16,8 @@ import Detail from './components/detail/Detail'
 import AllIssues from './components/post issues/AllIssues'
 import UpdateIssue from './components/UpdateIssue/UpdateIssue'
 import Profile from './components/profile/Profile'
+import Footer from './components/footer/Footer'
+import MyIssues from './components/post issues/MyIssues'
 function App() {
   const locations = useLocation();
   const [showMenu, setShowMenu] = useState(false);
@@ -33,7 +35,7 @@ function App() {
       <Routes>
         {
           locations.pathname == '/SignIn' ? <Route path='/SignIn' element={<SignIn />} /> :
-            <Route path='/SignUp/:id' element={<SignUp />} />
+            <Route path='/SignUp' element={<SignUp />} />
         }
         <Route path='/' element={<Home />} />
         <Route path='/AddIssue' element={<PrivateRoutes />}>
@@ -43,6 +45,10 @@ function App() {
           <Route path='/Contact' element={<Contact />} />
         </Route>
         <Route path='/AllIssues' element={<AllIssues />} />
+        {
+          locations.pathname === "/AllIssues" ? <Route path='/AllIssues' element={<AllIssues />} /> :
+          <Route path='/AllIssues/:id' element={<AllIssues />} />
+        }
         <Route path='/Detail/:id' element={<Detail />} />
         <Route path='/UpdateIssue' element={<PrivateRoutes />}>
           <Route path='/UpdateIssue/:id' element={<UpdateIssue />} />
@@ -51,8 +57,11 @@ function App() {
         <Route path='/Profile' element={<PrivateRoutes />}>
           <Route path='/Profile' element={<Profile />} />
         </Route>
-
+        <Route path='/MyIssues' element={<PrivateRoutes />}>
+          <Route path='/MyIssues' element={<MyIssues />} />
+        </Route>
       </Routes>
+      <Footer/>
     </>
   )
 }

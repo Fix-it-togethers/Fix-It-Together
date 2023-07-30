@@ -45,9 +45,9 @@ const AddIssue = () => {
         <div className=" w-[90%] mx-auto bg-[#fff] shadow rounded p-3 lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#061826]">
             <div className='flex flex-col justify-start items-start gap-3 space-y-3'>
                 <div className="w-full rounded-md p-5 bg-[#061826] text-[#fff]">
-                    <div className=" p-4">
-                        <div className="p-3">
-                            <h1 className="text-4xl tracking-widest text-center">Add Issues of Information</h1>
+                    <div className=" md:p-4">
+                        <div className="p-2 md:p-3">
+                            <h1 className="text-xl lg:text-4xl lg:tracking-widest text-center">Add Issues of Information</h1>
                         </div>
                         <span className="flex justify-center items-center space-x-4">
                             <Link to="/" className="text-xl">HOME</Link> <small>/</small> <span className="text-lg">Add Issues</span>

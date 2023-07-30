@@ -7,7 +7,7 @@ const Home = () => {
                 <div className="flex flex-col justify-center items-start space-y-8">
                     <h1 className="text-xl  ml-4 lg:ml-0 lg:text-3xl lg:tracking-widest">Welcome to Fix It Together </h1>
                     <p className="text-base ml-4 lg:ml-0 lg:text-lg lg:tracking-wider font-sans leading-8">Let`s make our community better a place , Ever get frustrated that a problem in your town or neighborhood goes ages without being resolved? You might have road issues (potholes, dangerous areas), overgrown plants</p>
-                    <button className="px-3 py-2 text-[#474E68] mt-8 rounded shadow bg-white">Get Started</button>
+                    <button className="ml-5 md:ml-0 px-3 py-2 text-[#474E68] mt-8 rounded shadow bg-white">Get Started</button>
                 </div>
                 <img src={profile} alt="profile issues" />
             </div>
