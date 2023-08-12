@@ -178,7 +178,7 @@ function Detail() {
       </div>
       <div className="w-full  flex flex-col lg:flex-row justify-start items-start gap-3">
         <div
-          className="w-full mt-4 mx-auto lg:mx-0 flex flex-col justify-start items-start lg:items-start  cursor-pointer  p-3 lg:gap-4"
+          className="w-full mt-4 mx-auto lg:mx-0 flex flex-col justify-start items-start lg:items-start  p-3 lg:gap-4"
           key={issue.id}
         >
           <img
@@ -206,7 +206,7 @@ function Detail() {
                   <>
                     <AiOutlineLike
                       className={
-                        likes ? "inline text-gray-500" : "inline text-gray-500"
+                        likes ? "inline cursor-pointer text-gray-500" : "inline text-gray-500"
                       }
                       size={25}
                       onClick={() => handleLike()}
@@ -224,7 +224,7 @@ function Detail() {
                     {issue.downvotes > 0 ? issue.downvotes : ""}
                     <small className=" relative">
                       <BiShare
-                        className="inline"
+                        className="inline cursor-pointer"
                         size={20}
                         onClick={() => setBtnShare(!btnShare)}
                       />
@@ -234,10 +234,10 @@ function Detail() {
                             <FacebookShareButton
                               url="https://fix-it-together.vercel.app/"
                               hashtag="#Fix-It-Together website post issues"
-                              className="inline"
+                              className="inline cursor-pointer"
                             >
                               <FacebookIcon
-                                className="text-xl rounded-lg"
+                                className="text-xl rounded-lg cursor-pointer"
                                 size={23}
                               />
                             </FacebookShareButton>
@@ -248,7 +248,7 @@ function Detail() {
                                 issue.title.slice(0, 100) +
                                 [issue.title.length > 30 ? "." : " "]
                               }
-                              className="inline"
+                              className="inline cursor-pointer"
                             >
                               <TwitterIcon
                                 className="text-xl rounded-lg"
@@ -261,7 +261,7 @@ function Detail() {
                                 issue.title.slice(0, 100) +
                                 [issue.title.length > 30 ? "." : " "]
                               }
-                              className="inline"
+                              className="inline cursor-pointer"
                             >
                               <WhatsappIcon
                                 className="text-xl rounded-lg"
@@ -276,7 +276,7 @@ function Detail() {
                     </small>
 
                     <small>
-                      <AiOutlineComment className="inline" size={20} />
+                      <AiOutlineComment className="inline cursor-pointer" size={20} />
                     </small>
                   </>
                 )}
@@ -313,9 +313,10 @@ function Detail() {
               {user.id === issue.user_id && (
                 <span className="flex flex-row justify-start items-center space-x-1">
                   <Link to={`/UpdateIssue/${issue.id}`}>
-                    <BiSolidEdit size={20} className="inline" />
+                    <BiSolidEdit size={20} className="inline cursor-pointer" />
                   </Link>
                   <RiChatDeleteFill
+                  className="inline cursor-pointer"
                     size={20}
                     onClick={() => handleDelete(issue.id)}
                   />
@@ -341,7 +342,7 @@ function Detail() {
                   />
                   <button
                     type="submit"
-                    className="inline px-4 py-[10px]  rounded   bg-[#032443] text-[#F7F5F5] transition ease-in-out hover:text-[#F7F5F5] hover:bg-[#E8401B]"
+                    className="inline px-4 py-[10px] cursor-pointer  rounded   bg-[#032443] text-[#F7F5F5] transition ease-in-out hover:text-[#F7F5F5] hover:bg-[#E8401B]"
                   >
                     Post
                   </button>
@@ -368,7 +369,7 @@ function Detail() {
                   />
                   <button
                     type="submit"
-                    className="inline px-4 py-[10px]  rounded   bg-[#032443] text-[#F7F5F5] transition ease-in-out hover:text-[#F7F5F5] hover:bg-[#E8401B]"
+                    className="inline px-4 py-[10px]  rounded  cursor-pointer  bg-[#032443] text-[#F7F5F5] transition ease-in-out hover:text-[#F7F5F5] hover:bg-[#E8401B]"
                   >
                     Post
                   </button>
