@@ -55,19 +55,40 @@ export const FixSlice = createApi({
         }),
         upvotes: builder.mutation({
             query: (data) => ({
-                url: `'/api/issues/${data.id}/upvote`,
+                url: `/issues/${data.id}/upvote`,
                 method: 'POST'
             }),
             invalidatesTags: ["issues"]
         }),
         downVotes: builder.mutation({
             query: (data) => ({
-                url: `/api/issues/${data.id}/downvote`,
+                url: `/issues/${data.id}/downvote`,
                 method: 'POST'
             }),
             invalidatesTags: ["issues"]
+        }),
+        Addcomments: builder.mutation({
+            query: (data) => (
+                console.log("data:", data), {
+                    url: `/issues/${data.id}/comments`,
+                    method: 'POST',
+                    body: data.data
+                }),
+            invalidatesTags: ["issues"]
+
+        }),
+
+        getComments: builder.query({
+            query: (id) => {
+                return {
+                    url: `/issues/${id}/comments`,
+                    method: 'GET'
+                }
+            },
+            providesTags: ["issues"]
+
         })
     })
 })
 
-export const { useFetchIssueQuery, useAddIssueMutation, useUpdateIssueMutation, useDeleteIssueMutation, useDownVotesMutation, useUpvotesMutation } = FixSlice;
+export const { useFetchIssueQuery, useAddIssueMutation, useUpdateIssueMutation, useDeleteIssueMutation, useDownVotesMutation, useUpvotesMutation, useAddcommentsMutation, useGetCommentsQuery } = FixSlice;

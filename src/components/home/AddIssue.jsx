@@ -42,9 +42,9 @@ const AddIssue = () => {
         };
     
     return (
-        <div className=" w-[90%] mx-auto bg-[#fff] shadow rounded p-3 lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#061826]">
+        <div className=" w-[90%] mx-auto bg-[#F7F5F5] p-3 lg:w-[90%] xl:w-[80%] mt-8 text-[#032443]">
             <div className='flex flex-col justify-start items-start gap-3 space-y-3'>
-                <div className="w-full rounded-md p-5 bg-[#061826] text-[#fff]">
+                <div className="w-full rounded-md p-5 bg-[#032443] text-[#F7F5F5]">
                     <div className=" md:p-4">
                         <div className="p-2 md:p-3">
                             <h1 className="text-xl lg:text-4xl lg:tracking-widest text-center">Add Issues of Information</h1>
@@ -54,7 +54,7 @@ const AddIssue = () => {
                         </span>
                     </div>
                 </div>
-                <h1 className='lg:text-3xl tracking-widest text-[#061826]'>Add Issues</h1>
+                <h1 className='lg:text-3xl tracking-widest'>Add Issues</h1>
                 <div className='mt-5 grid grid-cols-1 lg:grid-cols-2 gap-3'>
                     <div>
                         <img className='mt-[-30px]' src={PhotoThink} alt="creative thinking" />
@@ -65,7 +65,7 @@ const AddIssue = () => {
                         <Form className='text-[#061826] flex flex-col lg:justify-start lg:items-start space-y-5'>
                             <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter title ' name='title' />
                             <ErrorMessage component="div" name='title' className='text-red-500'></ErrorMessage>
-                            <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter description ' name='description' />
+                            <Field className='p-3 border-2 lg:w-[80%]' as="textarea" placeholder='Enter description ' name='description' />
                             <ErrorMessage component="div" name='description' className='text-red-500'></ErrorMessage>
                             <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter date' name='date' />
                             <ErrorMessage component="div" name='date' className='text-red-500'></ErrorMessage>
@@ -73,7 +73,7 @@ const AddIssue = () => {
                             <ErrorMessage component="div" name='image' className='text-red-500'></ErrorMessage>
                             <Field className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter location' name='location' />
                             <ErrorMessage component="div" name='location' className='text-red-500'></ErrorMessage>
-                            <button type="submit" className='p-3 border-2 lg:w-[80%] bg-[#061826] text-[#fff]'>Add Issue</button>
+                            <button type="submit" className='p-3 border-2 lg:w-[80%] bg-[#032443] text-[#F7F5F5] transition ease-in-out hover:text-[#F7F5F5] hover:bg-[#E8401B]'>Add Issue</button>
                         </Form>
                     </Formik>
                 </div>

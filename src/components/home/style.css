@@ -6,3 +6,21 @@
         display: none;
     }
 }
+
+@media (max-width:768px) {
+    .show {
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 90px;
+        z-index: 10;
+        margin-left: 10px;
+    }
+    .hide {
+        display: block;
+        position: absolute;
+        left: -1000px;
+        top: 50px;
+        z-index: 4;
+    }
+}

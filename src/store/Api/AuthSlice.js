@@ -28,7 +28,7 @@ export const authSlice = createApi({
                 method: "POST",
                 body: existuser
             }),
-            onQueryStarted: async (arg, { queryFulfilled }) => {
+            onQueryStarted: async(arg, { queryFulfilled }) => {
                 try {
                     const result = await queryFulfilled
                     console.log(result)
@@ -45,5 +45,3 @@ export const authSlice = createApi({
 
 export const { useSignUpMutation, useSignInMutation } = authSlice;
 export default authSlice.reducer
-
-

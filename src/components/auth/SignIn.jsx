@@ -24,15 +24,17 @@ const SignIn = () => {
             email: values.email,
             password: values.password
         }).unwrap().then(() => {
+            toast.success("successfully Login")
             navigate('/')
+            
         }).catch((error) => {
             toast.error('Invalid email or password ', error.message)
         })
     }
     return (
-        <div className=" w-[95%] mx-auto lg:w-[75%] lg:ml-[22%] mt-10 lg:mt-14 text-[#061826] bg-[#fff] p-3 rounded shadow-sm">
-            <div className='lg:h-[29rem] bg-white mt-10 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 p-4 space-y-5 lg:space-y-2'>
-                <div className='bg-[#061826]  text-[#fff] rounded flex flex-col lg:justify-center lg:items-center space-y-3 p-8 lg:p-3'>
+        <div className=" w-[95%]  mx-auto lg:w-[90%] xl:w-[80%] mt-10 text-[#032443] bg-[#F7F5F5] p-3 shadow">
+            <div className='lg:h-[29rem] mt-10 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 p-4 space-y-5 lg:space-y-2'>
+                <div className='bg-[#032443]  text-[#F7F5F5] rounded flex flex-col lg:justify-center lg:items-center space-y-3 p-8 lg:p-3'>
                     <h1 className='text-xl font-bold md:text-4xl lg:tracking-wider'>Better Community</h1>
                     <div className=' space-y-3'>
                         <p className='text-base flex flex-row justify-start items-baseline space-y-2 space-x-3'><AiOutlineCheck size={18} /> <span>Help your community</span></p>
@@ -59,7 +61,7 @@ const SignIn = () => {
                                 }
                                 <ErrorMessage component="div" name='password' className='text-red-500' />
                             </div>
-                            <button className='p-3 border-2 lg:w-[80%] bg-[#061826] text-[#fff] outline-none rounded-md' type='submit'>Login</button>
+                            <button className='p-3 border-2 lg:w-[80%] bg-[#032443] text-[#F7F5F5] transition ease-in-out hover:text-[#F7F5F5] hover:bg-[#E8401B] rounded-md' type='submit'>Login</button>
                         </Form>
                     </Formik>
                 </div>
