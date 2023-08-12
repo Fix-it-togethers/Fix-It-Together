@@ -8,11 +8,11 @@ const Footer = () => {
     <footer className=' mx-auto lg:w-[90%] xl:w-[80%]  mt-14 bg-[#032443] text-[#F7F5F5] p-2'>
       <div className='xl:w-[99%]  lg:mx-auto px-2 py-8  flex flex-col md:flex-row md:justify-between gap-3'>
         <div className='py-2 px-1 md:ml-3 lg:ml-14'>
-          <div>
+          <div className='flex flex-row justify-start items-start '>
             <input className='p-3 border-collapse border-black shadow ' type='email' placeholder='example@gmail.com' />
             <button className='p-3 text-[#F7F5F5] bg-[#E8401B]  hover:text-[#E8401B] hover:bg-[#F7F5F5]  hover:shadow-lg duration-500 ease-in'>Send email</button>
-            <p className='text-base w-64 space-y-3 my-3 tracking-wider leading-6'>Get E-mail updates about our latest Fix it issues and special offers.</p>
           </div>
+            <p className='text-base w-64 space-y-3 my-3 tracking-wider leading-6'>Get E-mail updates about our latest Fix it issues and special offers.</p>
           <span>{getYear}  &copy; All rights reserved.</span>
         </div>
 

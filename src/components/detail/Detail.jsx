@@ -232,7 +232,7 @@ function Detail() {
                         {btnShare ? (
                           <>
                             <FacebookShareButton
-                              url="fix-it-together.com"
+                              url="https://fix-it-together.vercel.app/"
                               hashtag="#Fix-It-Together website post issues"
                               className="inline"
                             >
@@ -242,7 +242,7 @@ function Detail() {
                               />
                             </FacebookShareButton>
                             <TwitterShareButton
-                              url="fix-it-together.com"
+                              url="https://fix-it-together.vercel.app/"
                               hashtag="#Fix-It-Together website post issues"
                               title={
                                 issue.title.slice(0, 100) +
@@ -256,7 +256,7 @@ function Detail() {
                               />
                             </TwitterShareButton>
                             <WhatsappShareButton
-                              url="fix-it-together.com"
+                              url="https://fix-it-together.vercel.app/"
                               title={
                                 issue.title.slice(0, 100) +
                                 [issue.title.length > 30 ? "." : " "]
