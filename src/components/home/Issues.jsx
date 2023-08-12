@@ -59,72 +59,68 @@ function Issues({ handlelikes }) {
             .map((issue) => {
               return (
                 <Link
-                  className="w-full"
+                  className="w-full mx-auto lg:mx-0 flex flex-col lg:flex-row justify-start items-start gap-2 lg:justify-start lg:items-start transition hover:shadow-lg cursor-pointer ease-in-out p-1"
                   to={`/Detail/${issue.id}`}
                   key={issue.id}
                 >
-                  <div className="w-full mx-auto lg:mx-0 flex flex-col lg:flex-row justify-start items-start gap-2 lg:justify-start lg:items-start transition hover:shadow-lg cursor-pointer ease-in-out p-1">
-                    <img
-                      className="w-full lg:w-[90%] h-64 object-cover"
-                      src={issue.image}
-                      alt="photo fix issue"
-                    />
+                  <img
+                    className="w-full lg:w-[90%] h-64 object-cover"
+                    src={issue.image}
+                    alt="photo fix issue"
+                  />
 
-                    <div className=" space-y-3 lg:mt-0 mt-2 w-full">
-                      <h1 className="text-base font-medium">
-                        {issue.title.slice(0, 50) +
-                          [issue.title.length >= 50 ? "..." : " "]}
-                      </h1>
-                      <p className=" text-sm w-full">
-                        {issue.description.slice(0, 150) +
-                          [
-                            issue.description.length > 150
-                              ? "  Read more..."
-                              : " ",
-                          ]}{" "}
+                  <div className=" space-y-3 lg:mt-0 mt-2 w-full">
+                    <h1 className="text-base font-medium">
+                      {issue.title.slice(0, 50) +
+                        [issue.title.length >= 50 ? "..." : " "]}
+                    </h1>
+                    <p className=" text-sm w-full">
+                      {issue.description.slice(0, 150) +
+                        [
+                          issue.description.length > 150
+                            ? "  Read more..."
+                            : " ",
+                        ]}{" "}
+                    </p>
+                    <div className="flex flex-col justify-start items-start space-y-1 gap-1">
+                      <p className="flex flex-row justify-start lg:items-center items-start">
+                        <CiFlag1 className="mt-1" size={18} />
+                        <span className="ml-2 text-xs">{issue.location}</span>
                       </p>
-                      <div className="flex flex-col justify-start items-start space-y-1 gap-1">
-                        <p className="flex flex-row justify-start lg:items-center items-start">
-                          <CiFlag1 className="mt-1" size={18} />
-                          <span className="ml-2 text-xs">{issue.location}</span>
-                        </p>
-                        <p className="flex flex-row justify-start lg:items-center items-start">
-                          <CgCalendarDates className="mt-1" size={18} />
-                          <span className="ml-2 text-xs">{issue.date}</span>
-                        </p>
-                      </div>
+                      <p className="flex flex-row justify-start lg:items-center items-start">
+                        <CgCalendarDates className="mt-1" size={18} />
+                        <span className="ml-2 text-xs">{issue.date}</span>
+                      </p>
+                    </div>
 
-                      <div className="flex flex-row justify-between items-start lg:items-center space-y-1 border-t-2 w-full p-1 ">
-                        <span className="flex flex-row justify-start items-center space-x-6">
-                          <p>
-                            <AiOutlineLike
-                              className="inline"
-                              onClick={() => handlelikes()}
-                              size={20}
-                            />{" "}
-                            <span>
-                              {issue.upvotes > 0 ? issue.upvotes : ""}
-                            </span>
-                          </p>
-                          <p>
-                            <AiOutlineDislike
-                              onClick={() => handlelikes()}
-                              size={20}
-                              className="inline"
-                            />
-                            <span>
-                              {issue.downvotes > 0 ? issue.downvotes : ""}
-                            </span>
-                          </p>
-                          <small>
-                            <BiShare className="inline" size={20} />
-                          </small>
+                    <div className="flex flex-row justify-between items-start lg:items-center space-y-1 border-t-2 w-full p-1 ">
+                      <span className="flex flex-row justify-start items-center space-x-6">
+                        <p>
+                          <AiOutlineLike
+                            className="inline"
+                            onClick={() => handlelikes()}
+                            size={20}
+                          />{" "}
+                          <span>{issue.upvotes > 0 ? issue.upvotes : ""}</span>
+                        </p>
+                        <p>
+                          <AiOutlineDislike
+                            onClick={() => handlelikes()}
+                            size={20}
+                            className="inline"
+                          />
+                          <span>
+                            {issue.downvotes > 0 ? issue.downvotes : ""}
+                          </span>
+                        </p>
+                        <small>
+                          <BiShare className="inline" size={20} />
+                        </small>
 
-                          <small>
-                            <AiOutlineComment className="inline" size={20} />
-                          </small>
-                        </span>
-                      </div>
+                        <small>
+                          <AiOutlineComment className="inline" size={20} />
+                        </small>
+                      </span>
                     </div>
                   </div>
                 </Link>
