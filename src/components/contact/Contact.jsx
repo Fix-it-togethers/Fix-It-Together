@@ -40,7 +40,7 @@ const Contact = () => {
                         <input className='p-3 border-2 lg:w-[80%]' type="email" placeholder='Enter Email ' name='user_email' />
                         <input className='p-3 border-2 lg:w-[80%]' type="text" placeholder='Enter subject ' name='subject' />
                         <textarea className='p-3 border-2 lg:w-[80%]' placeholder='Enter Message ' name="message" id="" cols="20" rows="4"></textarea>
-                        <input type="submit" className='p-3 border-2 lg:w-[80%] bg-[#032443] text-[#F7F5F5] transition ease-in-out hover:text-[#F7F5F5] hover:bg-[#E8401B]' value='Submit'/>
+                        <input type="submit" className='p-3 border-2 cursor-pointer lg:w-[80%] bg-[#032443] text-[#F7F5F5] transition ease-in-out hover:text-[#F7F5F5] hover:bg-[#E8401B]' value='Submit'/>
                     </form>
                 </div>
 

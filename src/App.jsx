@@ -56,11 +56,12 @@ function App() {
           <Route path='/UpdateIssue/:id' element={<UpdateIssue />} />
         </Route>
         <Route path='/About' element={<About />} />
-
+        <Route path='/Dashboard' element={<PrivateRoutes/>}>
         <Route path='/Dashboard' element={<Dashboard/>}>
           <Route path='Profile' element={<Profile />} />
           <Route index element={<MyIssues />} />
           <Route path='MyIssues' element={<MyIssues />} />
+        </Route>
         </Route>
         <Route path='*' element={<Opps/>}/>
       </Routes>
