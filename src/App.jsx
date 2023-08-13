@@ -62,7 +62,7 @@ function App() {
           <Route index element={<MyIssues />} />
           <Route path='MyIssues' element={<MyIssues />} />
         </Route>
-        <Route path="*" element={<Opps/>}/>
+        <Route path='*' element={<Opps/>}/>
       </Routes>
 
       <Footer/>
