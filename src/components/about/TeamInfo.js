@@ -25,7 +25,7 @@ export const TeamInfo = [
         "description": "Creative & Owner",
         "facebook": "https://www.facebook.com/gabalaax",
         "github": "https://github.com/gabalaax",
-        "linkedin": "https://www.linkedin.com/in/gabalaax",
+        "linkedin": "https://www.linkedin.com/in/nasradin-abdikani-6635a8236/",
     },
     {
         "id": 4,

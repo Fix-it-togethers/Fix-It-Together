@@ -9,7 +9,6 @@ const Contact = () => {
                 console.log(result.text);
                 toast.success("Successfully sended email message")
             }, (error) => {
-                console.log(error.text);
                 toast.error(error.text);
             });
     };

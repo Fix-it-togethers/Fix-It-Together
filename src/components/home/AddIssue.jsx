@@ -31,7 +31,6 @@ const AddIssue = () => {
             location: values.location
         }).unwrap()
         .then(() => {
-            console.log(values);
             toast.success("successfully added issue");
             navigate("/")
         })
