@@ -129,7 +129,7 @@ const SignUp = () => {
                 />
                 {type === "password" ? (
                   <span
-                    className=" absolute top-[1rem] z-10 right-8 lg:right-28"
+                    className=" absolute top-[1rem] z-10 right-8 lg:right-32"
                     onClick={() => setType("text")}
                   >
                     {" "}
@@ -137,7 +137,7 @@ const SignUp = () => {
                   </span>
                 ) : (
                   <span
-                    className=" absolute top-[1rem] z-10 right-10 lg:right-28"
+                    className=" absolute top-[1rem] z-10 right-10 lg:right-32"
                     onClick={() => setType("password")}
                   >
                     {" "}
