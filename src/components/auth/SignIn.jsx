@@ -57,7 +57,7 @@ const SignIn = () => {
                             <div className=' w-full relative'>
                                 <Field className='w-full p-3 border-2 lg:w-[80%]' type={type} placeholder='Enter Password ' name='password' />
                                 {
-                                    type === 'password' ? <span className=' absolute top-[1rem] z-10 right-8 lg:right-28' onClick={() => setType("text")}> <FiEyeOff /> </span> : <span className=' absolute top-[1rem] z-10 right-10 lg:right-28' onClick={() => setType("password")}> <FiEye /> </span>
+                                    type === 'password' ? <span className=' absolute top-[1rem] z-10 right-9 lg:right-32' onClick={() => setType("text")}> <FiEyeOff /> </span> : <span className=' absolute top-[1rem] z-10 right-10 lg:right-32' onClick={() => setType("password")}> <FiEye /> </span>
                                 }
                                 <ErrorMessage component="div" name='password' className='text-red-500' />
                             </div>
